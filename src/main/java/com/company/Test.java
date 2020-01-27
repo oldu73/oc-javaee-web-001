@@ -11,15 +11,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "Test")
 public class Test extends HttpServlet {
 
-    private String message1;
-    private String message2;
-    private String message3;
-
     public void init() throws ServletException {
-
-        message1 = "Hello, world!";
-        message2 = "Cómo estás ?";
-        message3 = "Está indo muito bem, obrigado!";
 
     }
 
@@ -28,15 +20,10 @@ public class Test extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        response.setContentType("text/html");
-
-        PrintWriter out = response.getWriter();
-
-        out.print("<h1>" + message1 + "</h1>");
-        out.print("<h2>" + message2 + "</h2>");
-        out.print("<h3>" + message3+ "</h3>");
-
+        String message = "Au revoir!";
+        request.setAttribute("variable", message);
+        request.setAttribute("heure", "jour");
+        this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
     }
 
 }
