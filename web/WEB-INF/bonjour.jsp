@@ -1,13 +1,14 @@
-<%@ page import="java.io.PrintWriter" %>
 <%@ page pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bonjour</title>
 </head>
 <body>
+
+    <jsp:include page="menu.jsp"></jsp:include>
 
     <p>Test caractère bizarre: à, et é ben ça ne va pas mieux?? Si! Si si je te dis, mais ça va pas  la tête</p>
 

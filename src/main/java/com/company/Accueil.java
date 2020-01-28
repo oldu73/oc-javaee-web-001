@@ -7,8 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "Test")
-public class Test extends HttpServlet {
+@WebServlet(name = "Accueil")
+public class Accueil extends HttpServlet {
+
+    public Accueil() {
+        super();
+    }
 
     public void init() throws ServletException {
 
@@ -19,10 +23,7 @@ public class Test extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String message = "Au revoir!";
-        request.setAttribute("variable", message);
-        request.setAttribute("heure", "jour");
-        this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
     }
 
 }
