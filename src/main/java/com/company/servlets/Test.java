@@ -1,4 +1,6 @@
-package com.company;
+package com.company.servlets;
+
+import com.company.beans.Auteur;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,9 +21,28 @@ public class Test extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String name = request.getParameter("name");
+        request.setAttribute("name", name);
+
+        String age = request.getParameter("age");
+        request.setAttribute("age", age);
+
+        String[] noms = {"Jean", "Pierre", "Paul"};
+        request.setAttribute("noms", noms);
+
         String message = "Au revoir!";
         request.setAttribute("variable", message);
         request.setAttribute("heure", "jour");
+
+        Auteur auteur = new Auteur();
+
+        auteur.setPrenom("Mathieu");
+        auteur.setNom("Nebra");
+        auteur.setActif(false);
+
+        request.setAttribute("auteur", auteur);
+
         this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
     }
 

@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>Test</servlet-name>
-        <servlet-class>com.company.Test</servlet-class>
+        <servlet-class>com.company.servlets.Test</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -16,7 +16,7 @@
 
     <servlet>
         <servlet-name>Accueil</servlet-name>
-        <servlet-class>com.company.Accueil</servlet-class>
+        <servlet-class>com.company.servlets.Accueil</servlet-class>
     </servlet>
 
     <servlet-mapping>

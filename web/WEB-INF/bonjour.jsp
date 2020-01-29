@@ -21,6 +21,20 @@
 
     <p>
         <%
+            String name = (String) request.getAttribute("name");
+            response.getWriter().println("nom : " + name);
+        %>
+    </p>
+
+    <p>
+        <%
+            String age = (String) request.getAttribute("age");
+            response.getWriter().println("age : " + age);
+        %>
+    </p>
+
+    <p>
+        <%
             for (int i = 0; i < 20; i++) {
                 response.getWriter().println("Une nouvelle ligne : " + i + "</br>");
             }
@@ -39,6 +53,23 @@
             }
         %>
     </p>
+
+<%--    Expression language--%>
+
+    <p>Calcul1 ${10%3}</p>
+    <p>nom: ${name}</p>
+    <p>nom: ${age}</p>
+    <p>${age < 44 ? 'plus petit' : 'plus grand'}</p>
+
+    <p>nom1 ${noms[0]}</p>
+    <p>nom2 ${noms[1]}</p>
+    <p>nom3 ${noms[2]}</p>
+
+    <p>auteur.prenom : ${auteur.prenom}</p>
+    <p>auteur.nom : ${auteur.nom}</p>
+    <p>auteur statut : ${auteur.actif ? 'actif' : 'inactif'}</p>
+
+    <p></p>
 
 </body>
 </html>
